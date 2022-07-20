@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            * {
+            font-family: 'Lato', sans-serif;
+           }
+
+           .payment-details {
+               background-color: #e5e5e5;
+           }
+
+           .header {
+               background-color: white;
+               padding: 0 25px;
+               height: 70px;
+           }
+
+           .logo {
+                width: 100px;
+            }
+
+            .svg {
+                width: 25px;
+                height: 25px; 
+                margin-right: 25px;
+            }
+
+            .text-orange {
+                color: #e87722;
+            }
+
+            .header-right {
+                height: 100%;
+            }
+
+            .border-left {
+                border-left: 1px solid #878a92;
+                height: 100%;
+                padding-left: 20px;
+            }
+            
+            .content {
+                background-color: #e87722;
+                color: white;
+                padding: 20px 0 20px 400px;
+            }
+
+            .main-content {
+                margin: 0 120px;
+            }
+
+            .plan {
+                width: 35%;
+            }
+            
+            .plan-title {
+                font-weight: bold;
+                padding: 25px 0;
+            }
+
+            .plan-content, .payment-content {
+                background-color: white;
+                border-radius: 20px;
+            }
+
+            .plan-content-top {
+                border-bottom: 1px solid #878a92;
+                padding: 15px 20px;
+            }
+
+            .plan-content-link {
+                background-color: #e5e5e5;
+                color: #059862;
+                padding-left: 10px;
+            }
+            
+            .plan-content-center {
+                border-bottom: 1px solid #878a92;
+                margin: 0 20px;
+            }
+
+            .text-gray {
+                color: #878a92; 
+            }
+
+            .text-black {
+                color: black;
+            }
+
+            .text-decoration {
+                text-decoration: line-through;
+            }
+
+            .plan-content-last {
+                margin: 0 20px;
+            }
+
+            .plan-question {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .payment-method {
+                width: 55%;
+            }
+
+            .payment-content {
+                padding: 20px;
+            }
+
+            .payment-button {
+                margin-bottom: 15px;
+            }
+
+            .button {
+                padding: 20px;
+                border: 2px solid #e5e5e5;
+                border-radius: 10px;
+                width: 170px;
+                cursor: pointer;
+            }
+
+            .button:hover, .paynow:hover {
+                background-color: #e8bc9d;
+                color: #e87722 ;
+                border: 2px solid #e87722;
+            }
+
+            .payment-security {
+                padding: 20px 0;
+            }
+
+            .material-icons {
+                font-size: 20px;
+                padding-right: 10px;
+            }
+           
+            .payment-icons {
+                height: 25px;
+                width: 120px;
+            }
+
+            .payment-form {
+                padding-top: 10px;
+            }
+
+            .form {
+                position: relative;
+                margin-bottom: 25px;
+                width: 100%;
+            }
+
+           .label {
+                position: absolute;
+                top: -15px;
+                left: 15px;
+                z-index: 1;
+                font-size: 16px;
+                display: inline-block;
+           }
+
+           .label::after {
+                content: " ";
+                background-color: #fff;
+                width: 100%;
+                height: 13px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+           }
+
+            .form input {
+                width: 100%;
+                height: 40px;
+                border: 1px solid #878a92;
+                border-radius: 5px;
+                outline: none;
+            }
+
+            .CVV {
+                border: 1px solid #878a92;
+                border-radius: 5px;
+                margin-left: 5px;
+                padding-right: 20px;
+            }
+
+            .CVV input {
+                border: none;
+            }
+    
+            .paynow {
+                background-color: #e87722;
+                border: none;
+                color: white;
+                width: 100%;
+                height: 30px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            
+           
+            .d-flex {
+                display: flex;
+            }
+
+            .flex-row {
+                flex-direction: row;
+            }
+
+            .flex-column {
+                flex-direction: column;
+            }
+
+            .justify-content-between {
+                justify-content: space-between;
+            }
+
+            .justify-content-around {
+                justify-content: space-around;
+            }
+
+            .justify-content-center {
+                justify-content: center;
+            }
+
+            .align-items-center {
+                align-items: center;
+            }
+
+            .align-items-end {
+                align-items: flex-end;
+            }
+
+            @media only screen and (max-width: 800px) {
+                .d-xl-none {
+                    display: none;
+                }
+
+                .header-right {
+                    margin-right: -40px;
+                }
+
+                .content {
+                    padding: 2px 20px;
+                }
+
+                .main-content {
+                    flex-direction: column;
+                    margin: 0;
+                }
+
+                .plan {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+
+                .payment-breakdown {
+                    color: #e87722;
+                    padding: 0 20px 20px;
+                }
+
+                .payment-method {
+                    background-color: white;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+
+                .payment-button {
+                    display: flex;
+                    flex-direction: column;
+                }
+               
+                .button {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    margin: 10px 0;
+                    position: relative;
+                }
+
+                .button:hover {
+                    background-color: white;
+                    color: black;
+                    border: 2px solid #e5e5e5 ;
+                }
+
+                .button-top-left {
+                    position: absolute;
+                    top: -15px;
+                    z-index: 1;
+                    background-color: #e87722;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 3px 10px;
+                    font-size: 14px;
+                }
+
+                .button-left {
+                    align-items: flex-start;
+                    margin-top: 10px;
+                }
+                 
+                .svg-orange {
+                    color: #e87722 ;
+                }
+
+                .button-paynow {
+                    background-color: white;
+                    border: none;
+                    color: #e87722;
+                }
+
+                .button-paynow:hover {
+                    background-color: #e8bc9d;
+                    color: #e87722 ;
+                    border: 2px solid #e87722;
+                }
+
+                .paynow-arrow {
+                    background-color: #e87722;
+                    color: white;
+                    padding: 5px;
+                    border-radius: 5px;
+                    margin-left: 10px;
+                }
+            }
+            
+            @media only screen and (min-width: 800px) {
+                .d-xs-none {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="payment-details">
+            
+            <div class="header d-flex flex-row justify-content-between align-items-center">
+                <div class="d-xl-none">
+                    <div class="logo">
+                        <svg viewBox="0 0 96 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>Logo</title>
+                            <g id="Molecule" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Logo/FWD/Logotype/Dark">
+                                    <g id="FWD_01c-No-responders-NoDscpt-REV-SPOT" transform="translate(0.000000, -0.000000)">
+                                        <path d="M77.9416004,15.5125025 C78.1658784,15.7391822 78.2912621,16.0365906 78.2912621,16.3537104 C78.2912621,16.6685111 78.1658784,16.9699778 77.9416004,17.1960778 L71.9826346,23.0132246 C71.7459949,23.2393246 71.4334185,23.3616505 71.1196648,23.3616505 C70.9630823,23.3616505 70.8041451,23.335562 70.6516832,23.270051 C70.198418,23.0856926 69.9029126,22.6532039 69.9029126,22.1725965 L69.9029126,10.5365635 C69.9029126,10.0530574 70.198418,9.62172819 70.6516832,9.43389128 C71.109069,9.25127205 71.6323843,9.35446641 71.9826346,9.69303665 L77.9416004,15.5125025" id="Fill-1" fill="#EE7623"></path>
+                                        <path d="M40.7284475,2.79324347 C40.4317871,3.55183198 40.1025389,4.65388936 39.721038,6.10680814 L39.4193209,7.24980883 L35.7228641,21.9672221 L31.4156688,3.14012427 C31.0482143,1.341462 30.0531657,0.230874765 27.5849282,0.230874765 L1.25575025,0.230874765 C0.0460722688,0.230874765 0.00337114162,1.52513823 0,1.53537406 L0,32.0466685 C0,32.0466685 0.0207887067,32.6938002 0.639955051,32.6938002 L3.08628016,32.6938002 C4.84208308,32.6938002 7.08838712,31.5479563 7.08838712,28.3867917 L7.08838712,19.0920921 L16.3095832,19.0920921 C19.8234365,19.0920921 20.681392,16.551901 20.681392,15.1058061 L20.681392,14.5684252 C20.681392,14.0572025 20.5077782,13.7450097 19.8976016,13.7450097 L7.08838712,13.7450097 L7.08838712,6.04596184 L25.1981599,6.04596184 L30.6633423,27.3461493 C30.8307757,27.9830452 31.7876181,31.3523382 31.7876181,31.3523382 C32.1545107,32.5351449 32.1151807,32.7063107 33.1102293,32.7063107 L35.3228219,32.7063107 C38.0450188,32.7063107 38.9833199,31.0088694 39.4631457,29.8118463 C39.7041823,29.1630086 39.8766724,28.8792487 40.2660393,27.4166627 L45.0850862,9.05586365 L50.1800049,27.3251089 C50.3457527,27.9614362 51.2346104,31.344377 51.2346104,31.344377 C51.6020648,32.5232031 51.5649823,32.7051734 52.5589072,32.7051734 L54.7703761,32.7051734 C57.492573,32.7051734 58.4342452,31.0060261 58.9151947,29.8016104 C59.1511746,29.1533414 59.3888401,28.5335052 59.7798925,27.0720566 L64.789409,6.06529618 L80.3039646,6.06529618 C81.6372511,6.06529618 82.7103979,6.18243953 83.6773537,6.47927852 C84.9297328,6.85914143 86.0422095,7.80823006 86.9703972,9.29469961 C87.8682445,10.7504617 88.3829055,13.2997513 88.4048179,16.4666024 C88.4036942,20.0383374 87.347965,23.2068945 85.3893317,24.9196896 C84.9527689,25.3194555 84.4397935,25.627099 83.832988,25.8534245 C83.2143835,26.0860052 82.6148822,26.2315814 82.0468448,26.2878785 C81.4366682,26.3544113 80.6264705,26.4789472 79.5645609,26.4869084 L79.5488289,26.4869084 L76.1658883,26.4931637 L71.304702,26.4931637 C71.2957123,26.4880458 71.2855989,26.4880458 71.2805422,26.4880458 C70.2298697,26.4880458 70.1939109,27.1056073 70.1939109,27.3694642 L70.1939109,28.6472366 C70.1939109,30.5061765 71.7114865,32.6414838 74.7556273,32.6414838 L74.8623802,32.6414838 L80.7669347,32.6397778 C82.2693402,32.6227181 83.617235,32.51183 84.8263511,32.3031328 C86.0422095,32.0898864 87.1855884,31.7367504 88.2491836,31.2232531 C89.3144643,30.7171483 90.2977139,30.0472703 91.1933139,29.2187369 C92.3226463,28.1462497 93.2463392,26.9321669 93.9666397,25.5770571 C94.6785125,24.2179668 95.2032869,22.707045 95.5336587,21.0414485 C95.8426801,19.4708177 96,18.3511319 96,16.4876427 L96,16.4495427 C95.9471854,10.4126794 94.1835165,6.12273054 90.670787,3.12533919 C89.3245777,1.94935639 87.8070021,1.14470666 86.1399726,0.72276312 C84.5858763,0.328115122 82.7564701,0.133634409 80.6629912,0.133634409 L61.8694385,0.133634409 C60.8367454,0.143870236 59.2916389,0.684094441 58.6977561,3.14012427 L54.6186747,21.8466668 L50.2839484,7.17815804 L50.2839484,7.18896252 L49.9945921,6.10680814 C49.5765706,4.54413855 49.2383327,3.42160952 48.9883064,2.74433896 C48.7371563,2.06706841 48.2916038,1.43927101 47.6404116,0.860946786 C46.9976472,0.2860345 46.0880008,0 44.9204621,0 C43.7613513,0 42.8539523,0.274092702 42.1819714,0.825690048 C41.5071812,1.37785605 41.0256698,2.03124301 40.7284475,2.79324347 Z" id="Fill-2" fill="#183028"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-row">
+                    <div class="svg">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                    </div>
+                            
+                    <div class="text-orange">
+                        <span class="w3-badge w3-orange">1</span> <b class="d-xl-none">About you</b>
+                        <span class="w3-badge w3-orange">2</span> <b class="d-xl-none">Confirmation</b>
+                        <span class="w3-badge w3-orange">3</span> <b class="d-xl-none">Payment</b>
+                    </div>
+                </div>
+                   
+                <div class="header-right d-flex align-items-center">
+                    <div class="svg">
+                        <svg class="MuiSvgIcon-root MuiSvgIcon-root" focusable="false" viewBox="0 0 48 48" aria-hidden="true" role="presentation" data-mui-test="ContactIcon" icon="contact"><g id="Icon/Contact" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect id="Box" x="0" y="0" width="48" height="48"></rect><path d="M42.0001,30.0267 C42.0001,31.1217 41.1121,32.0087 40.0181,32.0087 L38.0351,32.0087 L38.0351,24.0347 L40.0191,24.0357 C41.1131,24.0357 42.0001,24.9227 42.0001,26.0177 L42.0001,30.0267 Z M10.0001,32.0087 L8.0181,32.0087 C6.9231,32.0087 6.0351,31.1217 6.0351,30.0267 L6.0351,26.0167 C6.0351,24.9227 6.9231,24.0347 8.0181,24.0347 L10.0001,24.0347 L10.0001,32.0087 Z M41.9491,20.3237 C41.0921,11.1807 33.3801,4.0007 24.0181,4.0007 C14.6551,4.0007 6.9431,11.1807 6.0861,20.3227 C3.7131,21.1307 2.0001,23.3747 2.0001,26.0167 L2.0001,30.0267 C2.0001,33.3497 4.6941,36.0447 8.0181,36.0447 L13.0351,36.0447 C13.5871,36.0447 14.0351,35.5957 14.0351,35.0447 L14.0351,20.9997 C14.0351,20.4467 13.5871,19.9997 13.0351,19.9997 L10.1981,19.9997 C11.1821,13.2447 16.9951,8.0357 24.0181,8.0357 C31.0401,8.0357 36.8541,13.2457 37.8371,19.9997 L35.0001,19.9997 C34.4471,19.9997 34.0001,20.4467 34.0001,20.9997 L34.0001,34.0267 C34.0001,37.3257 31.3251,40.0007 28.0261,40.0007 L28.0181,40.0007 L28.0181,39.0267 C28.0181,38.4737 27.5691,38.0267 27.0181,38.0267 L22.9961,38.0267 C21.3381,38.0267 19.9961,39.3697 19.9961,41.0267 L19.9961,43.0257 C19.9961,43.5787 20.4431,44.0257 20.9961,44.0257 L24.0061,44.0257 L24.0061,44.0357 L28.0261,44.0357 C32.8541,44.0357 36.8951,40.5987 37.8311,36.0447 L40.0181,36.0447 C43.3411,36.0447 46.0351,33.3497 46.0351,30.0267 L46.0351,26.0177 C46.0351,23.3757 44.3211,21.1307 41.9491,20.3237 L41.9491,20.3237 Z" id="Fill-1" fill="#fe9446"></path></g>
+                        </svg>
+                    </div>
+
+                    <div class="border-left d-flex align-items-center">
+                        <p>ID</p>
+                        <div class="svg">
+                            <svg class="MuiSvgIcon-root MuiSvgIcon-root MuiSelect-icon" focusable="false" viewBox="0 0 48 48" aria-hidden="true" role="presentation" data-mui-test="DropdownIcon"><g id="Icon/Drop-Down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M12.5855,21.2426 L23.1715,10.6576 L33.7575,21.2426 L34.4645,20.5356 C35.6365,19.3646 35.6365,17.4646 34.4645,16.2936 L23.1715,4.9996 L11.8785,16.2936 C10.7065,17.4646 10.7065,19.3646 11.8785,20.5356 L12.5855,21.2426 Z M34.4645,27.1216 C35.6365,28.2926 35.6365,30.1926 34.4645,31.3636 L23.1715,42.6576 L11.8785,31.3636 C10.7065,30.1926 10.7065,28.2926 11.8785,27.1216 L12.5855,26.4146 L23.1715,36.9996 L33.7575,26.4146 L34.4645,27.1216 Z" id="Drop-Down" fill="#fe9446"></path></g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <p>Submission</p>
+                <h3>Last step! Payment details</h3>
+            </div>
+    
+            <div class="main-content d-flex flex-row justify-content-around">
+
+                <div class="plan">
+                    <div class="plan-title">Your plan</div>
+
+                    <div class="plan-content">
+
+                        <div class="plan-content-top">
+                            <b>Asuransi Bebas Handal</b>
+                            <p>Plan option: <b>Premium</b> </p>
+                            <p>Coverage: <b>Rp150,000,000</b> </p>
+                            <p>Room benefit: <b>Rp350,000</b> </p>
+                            <div class="plan-content-link">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>20% off first year premium. 
+                                    <a href="https://www.fwd.com.vn/products/">T&C </a> apply.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="plan-content-center d-flex flex-column text-gray d-xl-none">
+                            <p class="plan-flex-row d-flex flex-row justify-content-between">
+                                <span>Payment mode</span>
+                                <span class="text-orange">Monthly
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                </span>
+                            </p>
+
+                            <p class="plan-flex-row d-flex flex-row justify-content-between">
+                                <span>First year monthly premium</span>
+                                <span class="d-flex flex-column align-items-end"> 
+                                    <b class="text-black"> <sup>Rp</sup>187.5k </b>
+                                    <span class="text-decoration text-gray">Rp230k</span>
+                                </span>
+                            </p>
+
+                            <p class="plan-flex-row d-flex flex-row justify-content-between">
+                                <span class="d-flex flex-column">
+                                    <span>Monthly premium</span>
+                                    <span>(Second year and beyond)</span>
+                                </span>
+                                <span>
+                                    <b class="text-black"> <sup>Rp</sup>198k </b>
+                                </span>
+                            </p>
+                        </div>
+
+                        <div class="plan-content-last d-flex flex-row justify-content-between align-items-center text-gray">
+                            <p class="d-flex flex-column">
+                                <span>Initial payment total</span>
+                                <span>(Two months)</span>
+                            </p>
+
+                            <span class="text-orange">
+                                <b class="d-xl-none"> <sup>Rp</sup>375k </b>
+                                <b class="d-xs-none"> <sup>IDR</sup>375k</b>
+                            </span>
+                        </div>
+
+                        <div class="payment-breakdown d-xs-none">
+                            <b>Payment breakdown</b>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="plan-question">Why do I need to pay for 2 months now?
+                        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <div class="plan-title">Choose payment method</div>
+
+                    <div class="payment-content">
+
+                        <div class="payment-button d-flex flex-row justify-content-around">
+                            <div class="button">
+                                <div class="button-top-left d-xs-none">
+                                    Get 3% cashback<sup>1</sup>
+                                </div>
+
+                                <div class="button-left d-flex flex-column align-items-center">
+                                    <i class="fa fa-credit-card svg-orange" aria-hidden="true"></i>
+                                    <b>Credit/debit card</b>
+                                </div>
+                                        
+                                <div class="button-right d-xs-none text-orange">
+                                    <div> 
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        Recommended
+                                    </div>
+                                            
+                                    <button class="button-paynow">
+                                        <b>Pay now</b>
+                                        <i class="fa fa-long-arrow-right paynow-arrow" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                                
+                            <div class="button">
+                                <div class="button-top-left d-xs-none">
+                                    Get 3% cashback<sup>1</sup>
+                                </div>
+
+                                <div class="button-left d-flex flex-column align-items-center">
+                                    <i class="fa fa-folder svg-orange" aria-hidden="true"></i>
+                                    <b>gopay</b>
+                                </div>
+
+                                <div class="button-right d-xs-none text-orange">
+                                    <button class="button-paynow">
+                                        <b>Pay now</b>
+                                        <i class="fa fa-long-arrow-right paynow-arrow" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="button">
+                            
+                                <div class="button-left d-flex flex-column align-items-center">
+                                    <i class="fa fa-university svg-orange" aria-hidden="true"></i>
+                                    <b>Bank transfer</b>
+                                </div>
+
+                                <div class="button-right d-xs-none text-orange">
+                                    <button class="button-paynow">
+                                        <b>Pay now</b>
+                                        <i class="fa fa-long-arrow-right paynow-arrow" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-text d-xl-none">
+                                <i class="fa fa-tag text-orange" aria-hidden="true"></i>
+                                <span>Get <b>3% cashback</b> on your first premium when paying by credit/debit card (viva FWD Max App). 
+                                    <span class="text-orange">Terms & conditions</span> apply.
+                                </span>
+                        </div>
+
+                        <div class="payment-security d-flex flex-row justify-content-between d-xl-none">
+                                <div class="d-flex text-gray">
+                                    <i class="material-icons">lock_outline</i>
+                                    <span>Secure SSL encryption</span>
+                                </div>
+
+                                <div class="payment-icons d-flex justify-content-between">
+                                <img src="MasterCard.jpg" alt="MasterCard">
+                                <img src="VisaCard.png" alt="VisaCard">
+                                <img src="AmexCard.jpg" alt="AmexCard">
+                                </div>
+                        </div>
+
+                        <div class="payment-form d-xl-none">
+                                <div class="form">
+                                    <label class="label">Card number</label>
+                                    <input type="number">
+                                </div>
+                                
+                                <div class="form">
+                                    <label class="label">Card holder name</label>
+                                    <input type="text">
+                                </div>
+                            
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form">
+                                        <label class="label">Expiry date</label>
+                                        <input type="text">  
+                                    </div>
+                                        
+                                    <div class="form">
+                                        <label class="label">CVV</label>
+                                        <div class="CVV d-flex justify-content-between align-items-center">
+                                            <input type="password" minlength="3" maxlength="3">
+                                            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                        
+                        <button class="paynow d-flex flex-row justify-content-center align-items-center d-xl-none">
+                            <i class="material-icons">lock_outline</i>
+                            <b>Pay now</b>
+                        </button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </body>
+</html>
+
